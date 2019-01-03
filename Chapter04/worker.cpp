@@ -31,6 +31,7 @@ void Worker::getCondition(condition_variable* &cv) {
 // --- RUN ---
 // Runs the worker instance.
 void Worker::run() {
+	unique_lock<mutex> ulock(mtx);
 	while (running) {
 		if (ready) {
 			// Execute the request.

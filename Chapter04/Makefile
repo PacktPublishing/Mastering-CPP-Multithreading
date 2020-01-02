@@ -8,7 +8,7 @@ CCFLAGS := -std=c++11 -g3
 all: $(OUTPUT)
 	
 $(OUTPUT):
-	$(GCC) -o $(OUTPUT) $(CCFLAGS) $(SOURCES)
+	$(GCC) -o $(OUTPUT) $(CCFLAGS) -pthread $(SOURCES)
 	
 clean:
 	rm $(OUTPUT)

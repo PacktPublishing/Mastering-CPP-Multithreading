@@ -26,13 +26,13 @@ using namespace std;
 class Worker {
 	condition_variable cv;
 	mutex mtx;
-	unique_lock<mutex> ulock;
+	//unique_lock<mutex> ulock;
 	AbstractRequest* request;
 	bool running;
 	bool ready;
 	
 public:
-	Worker() { running = true; ready = false; ulock = unique_lock<mutex>(mtx); }
+	Worker() { running = true; ready = false; }
 	void run();
 	void stop() { running = false; }
 	void setRequest(AbstractRequest* request) { this->request = request; ready = true; }
